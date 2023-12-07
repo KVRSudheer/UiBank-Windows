@@ -17,6 +17,7 @@ steps:
     projectJsonPath: 'project.json'
     orchestratorConnection: 'Pipeline'
     outputPath: '$(Build.ArtifactStagingDirectory)\Output'
+    outputType: Process
 
 - task: UiPathDeploy@4
   inputs:
