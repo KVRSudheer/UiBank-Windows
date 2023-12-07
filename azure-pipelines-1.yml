@@ -1,0 +1,16 @@
+- task: UiPathPack@4
+  inputs:
+    versionType: 'AutoVersion'
+    projectJsonPath: 'project.json'
+    orchestratorConnection: 'Pipeline'
+    outputPath: '$(Build.ArtifactStagingDirectory)\Output'
+
+- task: UiPathDeploy@4
+  inputs:
+    orchestratorConnection: 'Pipeline'
+    packagesPath: '$(Build.ArtifactStagingDirectory)\Output'
+    folderName: 'Shared'
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
