@@ -18,13 +18,6 @@ steps:
     orchestratorConnection: 'Pipeline'
     outputPath: '$(Build.ArtifactStagingDirectory)\Output'
     outputType: Process
-
-- task: UiPathDeploy@4
-  inputs:
-    orchestratorConnection: 'Pipeline'
-    packagesPath: '$(Build.ArtifactStagingDirectory)\Output'
-    folderName: 'Shared'
-
 - task: UiPathPack@4
   inputs:
     versionType: 'AutoVersion'
